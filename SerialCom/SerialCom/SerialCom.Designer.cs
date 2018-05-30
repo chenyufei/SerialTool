@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialCom));
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_addMsgHead = new System.Windows.Forms.CheckBox();
             this.btnCleanSendData = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.textSend = new System.Windows.Forms.TextBox();
@@ -53,6 +55,7 @@
             this.comBoxSerialPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBox_RemoveMsgHead = new System.Windows.Forms.CheckBox();
             this.richTextRecv = new System.Windows.Forms.RichTextBox();
             this.btnCleanRecvData = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -63,37 +66,35 @@
             this.toolStripStatusParity = new System.Windows.Forms.ToolStripStatusLabel();
             this.radioButton_StartLoraRX = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton_StopLoraRX = new System.Windows.Forms.RadioButton();
-            this.radioButton_StartLoraTX = new System.Windows.Forms.RadioButton();
-            this.radioButton_StopLoraTX = new System.Windows.Forms.RadioButton();
-            this.radioButton_StartGPS = new System.Windows.Forms.RadioButton();
-            this.radioButton_StopGPS = new System.Windows.Forms.RadioButton();
-            this.radioButton_StartADC = new System.Windows.Forms.RadioButton();
-            this.radioButton_StopADC = new System.Windows.Forms.RadioButton();
-            this.radioButton_StartStep = new System.Windows.Forms.RadioButton();
-            this.radioButton_StopStep = new System.Windows.Forms.RadioButton();
-            this.radioButton_SN = new System.Windows.Forms.RadioButton();
-            this.radioButton_Joineui = new System.Windows.Forms.RadioButton();
-            this.radioButton_Deveui = new System.Windows.Forms.RadioButton();
-            this.radioButton_appKey = new System.Windows.Forms.RadioButton();
-            this.radioButton_GpsToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_GpsToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_LoraToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_LoraToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_AdcToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_adcToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_StepToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_StepToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_WirelessGpsToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_WireLessGpsToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_WirelessLoraToOne = new System.Windows.Forms.RadioButton();
-            this.radioButton_wirelessLoraToZero = new System.Windows.Forms.RadioButton();
-            this.radioButton_ReadAll = new System.Windows.Forms.RadioButton();
-            this.radioButton_CleanAll = new System.Windows.Forms.RadioButton();
-            this.radioButton_ConnectDevice = new System.Windows.Forms.RadioButton();
-            this.checkBox_addMsgHead = new System.Windows.Forms.CheckBox();
-            this.checkBox_RemoveMsgHead = new System.Windows.Forms.CheckBox();
             this.radioButton_Common = new System.Windows.Forms.RadioButton();
+            this.radioButton_ConnectDevice = new System.Windows.Forms.RadioButton();
+            this.radioButton_CleanAll = new System.Windows.Forms.RadioButton();
+            this.radioButton_ReadAll = new System.Windows.Forms.RadioButton();
+            this.radioButton_wirelessLoraToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_WirelessLoraToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_WireLessGpsToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_WirelessGpsToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_StepToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_StepToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_adcToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_AdcToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_LoraToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_LoraToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_GpsToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_GpsToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_appKey = new System.Windows.Forms.RadioButton();
+            this.radioButton_Deveui = new System.Windows.Forms.RadioButton();
+            this.radioButton_Joineui = new System.Windows.Forms.RadioButton();
+            this.radioButton_SN = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopStep = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartStep = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopADC = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartADC = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopGPS = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartGPS = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopLoraTX = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartLoraTX = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopLoraRX = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -128,6 +129,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "发送方";
+            // 
+            // checkBox_addMsgHead
+            // 
+            this.checkBox_addMsgHead.AutoSize = true;
+            this.checkBox_addMsgHead.Location = new System.Drawing.Point(85, 197);
+            this.checkBox_addMsgHead.Name = "checkBox_addMsgHead";
+            this.checkBox_addMsgHead.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_addMsgHead.TabIndex = 10;
+            this.checkBox_addMsgHead.Text = "添加消息头";
+            this.checkBox_addMsgHead.UseVisualStyleBackColor = true;
             // 
             // btnCleanSendData
             // 
@@ -356,6 +367,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "接收方";
             // 
+            // checkBox_RemoveMsgHead
+            // 
+            this.checkBox_RemoveMsgHead.AutoSize = true;
+            this.checkBox_RemoveMsgHead.Location = new System.Drawing.Point(7, 249);
+            this.checkBox_RemoveMsgHead.Name = "checkBox_RemoveMsgHead";
+            this.checkBox_RemoveMsgHead.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_RemoveMsgHead.TabIndex = 5;
+            this.checkBox_RemoveMsgHead.Text = "移除消息头";
+            this.checkBox_RemoveMsgHead.UseVisualStyleBackColor = true;
+            // 
             // richTextRecv
             // 
             this.richTextRecv.Location = new System.Drawing.Point(7, 17);
@@ -470,141 +491,181 @@
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             // 
-            // radioButton_StopLoraRX
+            // radioButton_Common
             // 
-            this.radioButton_StopLoraRX.AutoSize = true;
-            this.radioButton_StopLoraRX.Location = new System.Drawing.Point(105, 14);
-            this.radioButton_StopLoraRX.Name = "radioButton_StopLoraRX";
-            this.radioButton_StopLoraRX.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_StopLoraRX.TabIndex = 4;
-            this.radioButton_StopLoraRX.TabStop = true;
-            this.radioButton_StopLoraRX.Text = "StopLoraRX";
-            this.radioButton_StopLoraRX.UseVisualStyleBackColor = true;
+            this.radioButton_Common.AutoSize = true;
+            this.radioButton_Common.Location = new System.Drawing.Point(725, 55);
+            this.radioButton_Common.Name = "radioButton_Common";
+            this.radioButton_Common.Size = new System.Drawing.Size(47, 16);
+            this.radioButton_Common.TabIndex = 32;
+            this.radioButton_Common.TabStop = true;
+            this.radioButton_Common.Text = "通用";
+            this.radioButton_Common.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StartLoraTX
+            // radioButton_ConnectDevice
             // 
-            this.radioButton_StartLoraTX.AutoSize = true;
-            this.radioButton_StartLoraTX.Location = new System.Drawing.Point(192, 14);
-            this.radioButton_StartLoraTX.Name = "radioButton_StartLoraTX";
-            this.radioButton_StartLoraTX.Size = new System.Drawing.Size(89, 16);
-            this.radioButton_StartLoraTX.TabIndex = 5;
-            this.radioButton_StartLoraTX.TabStop = true;
-            this.radioButton_StartLoraTX.Text = "StartLoraTX";
-            this.radioButton_StartLoraTX.UseVisualStyleBackColor = true;
-            this.radioButton_StartLoraTX.CheckedChanged += new System.EventHandler(this.radioButton_StartLoraTX_CheckedChanged);
+            this.radioButton_ConnectDevice.AutoSize = true;
+            this.radioButton_ConnectDevice.Location = new System.Drawing.Point(638, 56);
+            this.radioButton_ConnectDevice.Name = "radioButton_ConnectDevice";
+            this.radioButton_ConnectDevice.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_ConnectDevice.TabIndex = 31;
+            this.radioButton_ConnectDevice.TabStop = true;
+            this.radioButton_ConnectDevice.Text = "连接设备";
+            this.radioButton_ConnectDevice.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StopLoraTX
+            // radioButton_CleanAll
             // 
-            this.radioButton_StopLoraTX.AutoSize = true;
-            this.radioButton_StopLoraTX.Location = new System.Drawing.Point(287, 14);
-            this.radioButton_StopLoraTX.Name = "radioButton_StopLoraTX";
-            this.radioButton_StopLoraTX.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_StopLoraTX.TabIndex = 6;
-            this.radioButton_StopLoraTX.TabStop = true;
-            this.radioButton_StopLoraTX.Text = "StopLoraTX";
-            this.radioButton_StopLoraTX.UseVisualStyleBackColor = true;
+            this.radioButton_CleanAll.AutoSize = true;
+            this.radioButton_CleanAll.Location = new System.Drawing.Point(541, 57);
+            this.radioButton_CleanAll.Name = "radioButton_CleanAll";
+            this.radioButton_CleanAll.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_CleanAll.TabIndex = 30;
+            this.radioButton_CleanAll.TabStop = true;
+            this.radioButton_CleanAll.Text = "清除所有";
+            this.radioButton_CleanAll.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StartGPS
+            // radioButton_ReadAll
             // 
-            this.radioButton_StartGPS.AutoSize = true;
-            this.radioButton_StartGPS.Location = new System.Drawing.Point(382, 14);
-            this.radioButton_StartGPS.Name = "radioButton_StartGPS";
-            this.radioButton_StartGPS.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_StartGPS.TabIndex = 7;
-            this.radioButton_StartGPS.TabStop = true;
-            this.radioButton_StartGPS.Text = "StartGPS";
-            this.radioButton_StartGPS.UseVisualStyleBackColor = true;
+            this.radioButton_ReadAll.AutoSize = true;
+            this.radioButton_ReadAll.Location = new System.Drawing.Point(445, 57);
+            this.radioButton_ReadAll.Name = "radioButton_ReadAll";
+            this.radioButton_ReadAll.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_ReadAll.TabIndex = 29;
+            this.radioButton_ReadAll.TabStop = true;
+            this.radioButton_ReadAll.Text = "读取所有";
+            this.radioButton_ReadAll.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StopGPS
+            // radioButton_wirelessLoraToZero
             // 
-            this.radioButton_StopGPS.AutoSize = true;
-            this.radioButton_StopGPS.Location = new System.Drawing.Point(459, 14);
-            this.radioButton_StopGPS.Name = "radioButton_StopGPS";
-            this.radioButton_StopGPS.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_StopGPS.TabIndex = 8;
-            this.radioButton_StopGPS.TabStop = true;
-            this.radioButton_StopGPS.Text = "StopGPS";
-            this.radioButton_StopGPS.UseVisualStyleBackColor = true;
+            this.radioButton_wirelessLoraToZero.AutoSize = true;
+            this.radioButton_wirelessLoraToZero.Location = new System.Drawing.Point(541, 36);
+            this.radioButton_wirelessLoraToZero.Name = "radioButton_wirelessLoraToZero";
+            this.radioButton_wirelessLoraToZero.Size = new System.Drawing.Size(89, 16);
+            this.radioButton_wirelessLoraToZero.TabIndex = 28;
+            this.radioButton_wirelessLoraToZero.TabStop = true;
+            this.radioButton_wirelessLoraToZero.Text = "耦合lora->0";
+            this.radioButton_wirelessLoraToZero.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StartADC
+            // radioButton_WirelessLoraToOne
             // 
-            this.radioButton_StartADC.AutoSize = true;
-            this.radioButton_StartADC.Location = new System.Drawing.Point(538, 14);
-            this.radioButton_StartADC.Name = "radioButton_StartADC";
-            this.radioButton_StartADC.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_StartADC.TabIndex = 9;
-            this.radioButton_StartADC.TabStop = true;
-            this.radioButton_StartADC.Text = "StartADC";
-            this.radioButton_StartADC.UseVisualStyleBackColor = true;
+            this.radioButton_WirelessLoraToOne.AutoSize = true;
+            this.radioButton_WirelessLoraToOne.Location = new System.Drawing.Point(445, 35);
+            this.radioButton_WirelessLoraToOne.Name = "radioButton_WirelessLoraToOne";
+            this.radioButton_WirelessLoraToOne.Size = new System.Drawing.Size(89, 16);
+            this.radioButton_WirelessLoraToOne.TabIndex = 27;
+            this.radioButton_WirelessLoraToOne.TabStop = true;
+            this.radioButton_WirelessLoraToOne.Text = "耦合lora->1";
+            this.radioButton_WirelessLoraToOne.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StopADC
+            // radioButton_WireLessGpsToZero
             // 
-            this.radioButton_StopADC.AutoSize = true;
-            this.radioButton_StopADC.Location = new System.Drawing.Point(615, 14);
-            this.radioButton_StopADC.Name = "radioButton_StopADC";
-            this.radioButton_StopADC.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_StopADC.TabIndex = 10;
-            this.radioButton_StopADC.TabStop = true;
-            this.radioButton_StopADC.Text = "StopADC";
-            this.radioButton_StopADC.UseVisualStyleBackColor = true;
+            this.radioButton_WireLessGpsToZero.AutoSize = true;
+            this.radioButton_WireLessGpsToZero.Location = new System.Drawing.Point(344, 35);
+            this.radioButton_WireLessGpsToZero.Name = "radioButton_WireLessGpsToZero";
+            this.radioButton_WireLessGpsToZero.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_WireLessGpsToZero.TabIndex = 26;
+            this.radioButton_WireLessGpsToZero.TabStop = true;
+            this.radioButton_WireLessGpsToZero.Text = "耦合gps->0";
+            this.radioButton_WireLessGpsToZero.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StartStep
+            // radioButton_WirelessGpsToOne
             // 
-            this.radioButton_StartStep.AutoSize = true;
-            this.radioButton_StartStep.Location = new System.Drawing.Point(686, 14);
-            this.radioButton_StartStep.Name = "radioButton_StartStep";
-            this.radioButton_StartStep.Size = new System.Drawing.Size(77, 16);
-            this.radioButton_StartStep.TabIndex = 11;
-            this.radioButton_StartStep.TabStop = true;
-            this.radioButton_StartStep.Text = "StartStep";
-            this.radioButton_StartStep.UseVisualStyleBackColor = true;
+            this.radioButton_WirelessGpsToOne.AutoSize = true;
+            this.radioButton_WirelessGpsToOne.Location = new System.Drawing.Point(255, 36);
+            this.radioButton_WirelessGpsToOne.Name = "radioButton_WirelessGpsToOne";
+            this.radioButton_WirelessGpsToOne.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_WirelessGpsToOne.TabIndex = 25;
+            this.radioButton_WirelessGpsToOne.TabStop = true;
+            this.radioButton_WirelessGpsToOne.Text = "耦合gps->1";
+            this.radioButton_WirelessGpsToOne.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StopStep
+            // radioButton_StepToZero
             // 
-            this.radioButton_StopStep.AutoSize = true;
-            this.radioButton_StopStep.Location = new System.Drawing.Point(769, 14);
-            this.radioButton_StopStep.Name = "radioButton_StopStep";
-            this.radioButton_StopStep.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_StopStep.TabIndex = 12;
-            this.radioButton_StopStep.TabStop = true;
-            this.radioButton_StopStep.Text = "StopStep";
-            this.radioButton_StopStep.UseVisualStyleBackColor = true;
+            this.radioButton_StepToZero.AutoSize = true;
+            this.radioButton_StepToZero.Location = new System.Drawing.Point(362, 57);
+            this.radioButton_StepToZero.Name = "radioButton_StepToZero";
+            this.radioButton_StepToZero.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_StepToZero.TabIndex = 24;
+            this.radioButton_StepToZero.TabStop = true;
+            this.radioButton_StepToZero.Text = "step->0";
+            this.radioButton_StepToZero.UseVisualStyleBackColor = true;
             // 
-            // radioButton_SN
+            // radioButton_StepToOne
             // 
-            this.radioButton_SN.AutoSize = true;
-            this.radioButton_SN.Location = new System.Drawing.Point(11, 36);
-            this.radioButton_SN.Name = "radioButton_SN";
-            this.radioButton_SN.Size = new System.Drawing.Size(35, 16);
-            this.radioButton_SN.TabIndex = 13;
-            this.radioButton_SN.TabStop = true;
-            this.radioButton_SN.Text = "SN";
-            this.radioButton_SN.UseVisualStyleBackColor = true;
-            this.radioButton_SN.CheckedChanged += new System.EventHandler(this.radioButton_SN_CheckedChanged);
+            this.radioButton_StepToOne.AutoSize = true;
+            this.radioButton_StepToOne.Location = new System.Drawing.Point(287, 57);
+            this.radioButton_StepToOne.Name = "radioButton_StepToOne";
+            this.radioButton_StepToOne.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_StepToOne.TabIndex = 23;
+            this.radioButton_StepToOne.TabStop = true;
+            this.radioButton_StepToOne.Text = "step->1";
+            this.radioButton_StepToOne.UseVisualStyleBackColor = true;
             // 
-            // radioButton_Joineui
+            // radioButton_adcToZero
             // 
-            this.radioButton_Joineui.AutoSize = true;
-            this.radioButton_Joineui.Location = new System.Drawing.Point(53, 35);
-            this.radioButton_Joineui.Name = "radioButton_Joineui";
-            this.radioButton_Joineui.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_Joineui.TabIndex = 14;
-            this.radioButton_Joineui.TabStop = true;
-            this.radioButton_Joineui.Text = "Joineui";
-            this.radioButton_Joineui.UseVisualStyleBackColor = true;
-            this.radioButton_Joineui.CheckedChanged += new System.EventHandler(this.radioButton_Joineui_CheckedChanged);
+            this.radioButton_adcToZero.AutoSize = true;
+            this.radioButton_adcToZero.Location = new System.Drawing.Point(222, 57);
+            this.radioButton_adcToZero.Name = "radioButton_adcToZero";
+            this.radioButton_adcToZero.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_adcToZero.TabIndex = 22;
+            this.radioButton_adcToZero.TabStop = true;
+            this.radioButton_adcToZero.Text = "adc->0";
+            this.radioButton_adcToZero.UseVisualStyleBackColor = true;
             // 
-            // radioButton_Deveui
+            // radioButton_AdcToOne
             // 
-            this.radioButton_Deveui.AutoSize = true;
-            this.radioButton_Deveui.Location = new System.Drawing.Point(125, 34);
-            this.radioButton_Deveui.Name = "radioButton_Deveui";
-            this.radioButton_Deveui.Size = new System.Drawing.Size(59, 16);
-            this.radioButton_Deveui.TabIndex = 15;
-            this.radioButton_Deveui.TabStop = true;
-            this.radioButton_Deveui.Text = "Deveui";
-            this.radioButton_Deveui.UseVisualStyleBackColor = true;
-            this.radioButton_Deveui.CheckedChanged += new System.EventHandler(this.radioButton_Deveui_CheckedChanged);
+            this.radioButton_AdcToOne.AutoSize = true;
+            this.radioButton_AdcToOne.Location = new System.Drawing.Point(156, 57);
+            this.radioButton_AdcToOne.Name = "radioButton_AdcToOne";
+            this.radioButton_AdcToOne.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_AdcToOne.TabIndex = 21;
+            this.radioButton_AdcToOne.TabStop = true;
+            this.radioButton_AdcToOne.Text = "adc->1";
+            this.radioButton_AdcToOne.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_LoraToZero
+            // 
+            this.radioButton_LoraToZero.AutoSize = true;
+            this.radioButton_LoraToZero.Location = new System.Drawing.Point(85, 57);
+            this.radioButton_LoraToZero.Name = "radioButton_LoraToZero";
+            this.radioButton_LoraToZero.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_LoraToZero.TabIndex = 20;
+            this.radioButton_LoraToZero.TabStop = true;
+            this.radioButton_LoraToZero.Text = "lora->0";
+            this.radioButton_LoraToZero.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_LoraToOne
+            // 
+            this.radioButton_LoraToOne.AutoSize = true;
+            this.radioButton_LoraToOne.Location = new System.Drawing.Point(11, 57);
+            this.radioButton_LoraToOne.Name = "radioButton_LoraToOne";
+            this.radioButton_LoraToOne.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_LoraToOne.TabIndex = 19;
+            this.radioButton_LoraToOne.TabStop = true;
+            this.radioButton_LoraToOne.Text = "lora->1";
+            this.radioButton_LoraToOne.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_GpsToZero
+            // 
+            this.radioButton_GpsToZero.AutoSize = true;
+            this.radioButton_GpsToZero.Location = new System.Drawing.Point(704, 36);
+            this.radioButton_GpsToZero.Name = "radioButton_GpsToZero";
+            this.radioButton_GpsToZero.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_GpsToZero.TabIndex = 18;
+            this.radioButton_GpsToZero.TabStop = true;
+            this.radioButton_GpsToZero.Text = "gps->0";
+            this.radioButton_GpsToZero.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_GpsToOne
+            // 
+            this.radioButton_GpsToOne.AutoSize = true;
+            this.radioButton_GpsToOne.Location = new System.Drawing.Point(638, 35);
+            this.radioButton_GpsToOne.Name = "radioButton_GpsToOne";
+            this.radioButton_GpsToOne.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_GpsToOne.TabIndex = 17;
+            this.radioButton_GpsToOne.TabStop = true;
+            this.radioButton_GpsToOne.Text = "gps->1";
+            this.radioButton_GpsToOne.UseVisualStyleBackColor = true;
             // 
             // radioButton_appKey
             // 
@@ -618,201 +679,141 @@
             this.radioButton_appKey.UseVisualStyleBackColor = true;
             this.radioButton_appKey.CheckedChanged += new System.EventHandler(this.radioButton_appKey_CheckedChanged);
             // 
-            // radioButton_GpsToOne
+            // radioButton_Deveui
             // 
-            this.radioButton_GpsToOne.AutoSize = true;
-            this.radioButton_GpsToOne.Location = new System.Drawing.Point(638, 35);
-            this.radioButton_GpsToOne.Name = "radioButton_GpsToOne";
-            this.radioButton_GpsToOne.Size = new System.Drawing.Size(59, 16);
-            this.radioButton_GpsToOne.TabIndex = 17;
-            this.radioButton_GpsToOne.TabStop = true;
-            this.radioButton_GpsToOne.Text = "gps->1";
-            this.radioButton_GpsToOne.UseVisualStyleBackColor = true;
+            this.radioButton_Deveui.AutoSize = true;
+            this.radioButton_Deveui.Location = new System.Drawing.Point(125, 34);
+            this.radioButton_Deveui.Name = "radioButton_Deveui";
+            this.radioButton_Deveui.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_Deveui.TabIndex = 15;
+            this.radioButton_Deveui.TabStop = true;
+            this.radioButton_Deveui.Text = "Deveui";
+            this.radioButton_Deveui.UseVisualStyleBackColor = true;
+            this.radioButton_Deveui.CheckedChanged += new System.EventHandler(this.radioButton_Deveui_CheckedChanged);
             // 
-            // radioButton_GpsToZero
+            // radioButton_Joineui
             // 
-            this.radioButton_GpsToZero.AutoSize = true;
-            this.radioButton_GpsToZero.Location = new System.Drawing.Point(704, 36);
-            this.radioButton_GpsToZero.Name = "radioButton_GpsToZero";
-            this.radioButton_GpsToZero.Size = new System.Drawing.Size(59, 16);
-            this.radioButton_GpsToZero.TabIndex = 18;
-            this.radioButton_GpsToZero.TabStop = true;
-            this.radioButton_GpsToZero.Text = "gps->0";
-            this.radioButton_GpsToZero.UseVisualStyleBackColor = true;
+            this.radioButton_Joineui.AutoSize = true;
+            this.radioButton_Joineui.Location = new System.Drawing.Point(53, 35);
+            this.radioButton_Joineui.Name = "radioButton_Joineui";
+            this.radioButton_Joineui.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_Joineui.TabIndex = 14;
+            this.radioButton_Joineui.TabStop = true;
+            this.radioButton_Joineui.Text = "Joineui";
+            this.radioButton_Joineui.UseVisualStyleBackColor = true;
+            this.radioButton_Joineui.CheckedChanged += new System.EventHandler(this.radioButton_Joineui_CheckedChanged);
             // 
-            // radioButton_LoraToOne
+            // radioButton_SN
             // 
-            this.radioButton_LoraToOne.AutoSize = true;
-            this.radioButton_LoraToOne.Location = new System.Drawing.Point(11, 57);
-            this.radioButton_LoraToOne.Name = "radioButton_LoraToOne";
-            this.radioButton_LoraToOne.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_LoraToOne.TabIndex = 19;
-            this.radioButton_LoraToOne.TabStop = true;
-            this.radioButton_LoraToOne.Text = "lora->1";
-            this.radioButton_LoraToOne.UseVisualStyleBackColor = true;
+            this.radioButton_SN.AutoSize = true;
+            this.radioButton_SN.Location = new System.Drawing.Point(11, 36);
+            this.radioButton_SN.Name = "radioButton_SN";
+            this.radioButton_SN.Size = new System.Drawing.Size(35, 16);
+            this.radioButton_SN.TabIndex = 13;
+            this.radioButton_SN.TabStop = true;
+            this.radioButton_SN.Text = "SN";
+            this.radioButton_SN.UseVisualStyleBackColor = true;
+            this.radioButton_SN.CheckedChanged += new System.EventHandler(this.radioButton_SN_CheckedChanged);
             // 
-            // radioButton_LoraToZero
+            // radioButton_StopStep
             // 
-            this.radioButton_LoraToZero.AutoSize = true;
-            this.radioButton_LoraToZero.Location = new System.Drawing.Point(85, 57);
-            this.radioButton_LoraToZero.Name = "radioButton_LoraToZero";
-            this.radioButton_LoraToZero.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_LoraToZero.TabIndex = 20;
-            this.radioButton_LoraToZero.TabStop = true;
-            this.radioButton_LoraToZero.Text = "lora->0";
-            this.radioButton_LoraToZero.UseVisualStyleBackColor = true;
+            this.radioButton_StopStep.AutoSize = true;
+            this.radioButton_StopStep.Location = new System.Drawing.Point(769, 14);
+            this.radioButton_StopStep.Name = "radioButton_StopStep";
+            this.radioButton_StopStep.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_StopStep.TabIndex = 12;
+            this.radioButton_StopStep.TabStop = true;
+            this.radioButton_StopStep.Text = "StopStep";
+            this.radioButton_StopStep.UseVisualStyleBackColor = true;
             // 
-            // radioButton_AdcToOne
+            // radioButton_StartStep
             // 
-            this.radioButton_AdcToOne.AutoSize = true;
-            this.radioButton_AdcToOne.Location = new System.Drawing.Point(156, 57);
-            this.radioButton_AdcToOne.Name = "radioButton_AdcToOne";
-            this.radioButton_AdcToOne.Size = new System.Drawing.Size(59, 16);
-            this.radioButton_AdcToOne.TabIndex = 21;
-            this.radioButton_AdcToOne.TabStop = true;
-            this.radioButton_AdcToOne.Text = "adc->1";
-            this.radioButton_AdcToOne.UseVisualStyleBackColor = true;
+            this.radioButton_StartStep.AutoSize = true;
+            this.radioButton_StartStep.Location = new System.Drawing.Point(686, 14);
+            this.radioButton_StartStep.Name = "radioButton_StartStep";
+            this.radioButton_StartStep.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_StartStep.TabIndex = 11;
+            this.radioButton_StartStep.TabStop = true;
+            this.radioButton_StartStep.Text = "StartStep";
+            this.radioButton_StartStep.UseVisualStyleBackColor = true;
             // 
-            // radioButton_adcToZero
+            // radioButton_StopADC
             // 
-            this.radioButton_adcToZero.AutoSize = true;
-            this.radioButton_adcToZero.Location = new System.Drawing.Point(222, 57);
-            this.radioButton_adcToZero.Name = "radioButton_adcToZero";
-            this.radioButton_adcToZero.Size = new System.Drawing.Size(59, 16);
-            this.radioButton_adcToZero.TabIndex = 22;
-            this.radioButton_adcToZero.TabStop = true;
-            this.radioButton_adcToZero.Text = "adc->0";
-            this.radioButton_adcToZero.UseVisualStyleBackColor = true;
+            this.radioButton_StopADC.AutoSize = true;
+            this.radioButton_StopADC.Location = new System.Drawing.Point(615, 14);
+            this.radioButton_StopADC.Name = "radioButton_StopADC";
+            this.radioButton_StopADC.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_StopADC.TabIndex = 10;
+            this.radioButton_StopADC.TabStop = true;
+            this.radioButton_StopADC.Text = "StopADC";
+            this.radioButton_StopADC.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StepToOne
+            // radioButton_StartADC
             // 
-            this.radioButton_StepToOne.AutoSize = true;
-            this.radioButton_StepToOne.Location = new System.Drawing.Point(287, 57);
-            this.radioButton_StepToOne.Name = "radioButton_StepToOne";
-            this.radioButton_StepToOne.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_StepToOne.TabIndex = 23;
-            this.radioButton_StepToOne.TabStop = true;
-            this.radioButton_StepToOne.Text = "step->1";
-            this.radioButton_StepToOne.UseVisualStyleBackColor = true;
+            this.radioButton_StartADC.AutoSize = true;
+            this.radioButton_StartADC.Location = new System.Drawing.Point(538, 14);
+            this.radioButton_StartADC.Name = "radioButton_StartADC";
+            this.radioButton_StartADC.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_StartADC.TabIndex = 9;
+            this.radioButton_StartADC.TabStop = true;
+            this.radioButton_StartADC.Text = "StartADC";
+            this.radioButton_StartADC.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StepToZero
+            // radioButton_StopGPS
             // 
-            this.radioButton_StepToZero.AutoSize = true;
-            this.radioButton_StepToZero.Location = new System.Drawing.Point(362, 57);
-            this.radioButton_StepToZero.Name = "radioButton_StepToZero";
-            this.radioButton_StepToZero.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_StepToZero.TabIndex = 24;
-            this.radioButton_StepToZero.TabStop = true;
-            this.radioButton_StepToZero.Text = "step->0";
-            this.radioButton_StepToZero.UseVisualStyleBackColor = true;
+            this.radioButton_StopGPS.AutoSize = true;
+            this.radioButton_StopGPS.Location = new System.Drawing.Point(459, 14);
+            this.radioButton_StopGPS.Name = "radioButton_StopGPS";
+            this.radioButton_StopGPS.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_StopGPS.TabIndex = 8;
+            this.radioButton_StopGPS.TabStop = true;
+            this.radioButton_StopGPS.Text = "StopGPS";
+            this.radioButton_StopGPS.UseVisualStyleBackColor = true;
             // 
-            // radioButton_WirelessGpsToOne
+            // radioButton_StartGPS
             // 
-            this.radioButton_WirelessGpsToOne.AutoSize = true;
-            this.radioButton_WirelessGpsToOne.Location = new System.Drawing.Point(255, 36);
-            this.radioButton_WirelessGpsToOne.Name = "radioButton_WirelessGpsToOne";
-            this.radioButton_WirelessGpsToOne.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_WirelessGpsToOne.TabIndex = 25;
-            this.radioButton_WirelessGpsToOne.TabStop = true;
-            this.radioButton_WirelessGpsToOne.Text = "耦合gps->1";
-            this.radioButton_WirelessGpsToOne.UseVisualStyleBackColor = true;
+            this.radioButton_StartGPS.AutoSize = true;
+            this.radioButton_StartGPS.Location = new System.Drawing.Point(382, 14);
+            this.radioButton_StartGPS.Name = "radioButton_StartGPS";
+            this.radioButton_StartGPS.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_StartGPS.TabIndex = 7;
+            this.radioButton_StartGPS.TabStop = true;
+            this.radioButton_StartGPS.Text = "StartGPS";
+            this.radioButton_StartGPS.UseVisualStyleBackColor = true;
             // 
-            // radioButton_WireLessGpsToZero
+            // radioButton_StopLoraTX
             // 
-            this.radioButton_WireLessGpsToZero.AutoSize = true;
-            this.radioButton_WireLessGpsToZero.Location = new System.Drawing.Point(344, 35);
-            this.radioButton_WireLessGpsToZero.Name = "radioButton_WireLessGpsToZero";
-            this.radioButton_WireLessGpsToZero.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_WireLessGpsToZero.TabIndex = 26;
-            this.radioButton_WireLessGpsToZero.TabStop = true;
-            this.radioButton_WireLessGpsToZero.Text = "耦合gps->0";
-            this.radioButton_WireLessGpsToZero.UseVisualStyleBackColor = true;
+            this.radioButton_StopLoraTX.AutoSize = true;
+            this.radioButton_StopLoraTX.Location = new System.Drawing.Point(287, 14);
+            this.radioButton_StopLoraTX.Name = "radioButton_StopLoraTX";
+            this.radioButton_StopLoraTX.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_StopLoraTX.TabIndex = 6;
+            this.radioButton_StopLoraTX.TabStop = true;
+            this.radioButton_StopLoraTX.Text = "StopLoraTX";
+            this.radioButton_StopLoraTX.UseVisualStyleBackColor = true;
             // 
-            // radioButton_WirelessLoraToOne
+            // radioButton_StartLoraTX
             // 
-            this.radioButton_WirelessLoraToOne.AutoSize = true;
-            this.radioButton_WirelessLoraToOne.Location = new System.Drawing.Point(445, 35);
-            this.radioButton_WirelessLoraToOne.Name = "radioButton_WirelessLoraToOne";
-            this.radioButton_WirelessLoraToOne.Size = new System.Drawing.Size(89, 16);
-            this.radioButton_WirelessLoraToOne.TabIndex = 27;
-            this.radioButton_WirelessLoraToOne.TabStop = true;
-            this.radioButton_WirelessLoraToOne.Text = "耦合lora->1";
-            this.radioButton_WirelessLoraToOne.UseVisualStyleBackColor = true;
+            this.radioButton_StartLoraTX.AutoSize = true;
+            this.radioButton_StartLoraTX.Location = new System.Drawing.Point(192, 14);
+            this.radioButton_StartLoraTX.Name = "radioButton_StartLoraTX";
+            this.radioButton_StartLoraTX.Size = new System.Drawing.Size(89, 16);
+            this.radioButton_StartLoraTX.TabIndex = 5;
+            this.radioButton_StartLoraTX.TabStop = true;
+            this.radioButton_StartLoraTX.Text = "StartLoraTX";
+            this.radioButton_StartLoraTX.UseVisualStyleBackColor = true;
+            this.radioButton_StartLoraTX.CheckedChanged += new System.EventHandler(this.radioButton_StartLoraTX_CheckedChanged);
             // 
-            // radioButton_wirelessLoraToZero
+            // radioButton_StopLoraRX
             // 
-            this.radioButton_wirelessLoraToZero.AutoSize = true;
-            this.radioButton_wirelessLoraToZero.Location = new System.Drawing.Point(541, 36);
-            this.radioButton_wirelessLoraToZero.Name = "radioButton_wirelessLoraToZero";
-            this.radioButton_wirelessLoraToZero.Size = new System.Drawing.Size(89, 16);
-            this.radioButton_wirelessLoraToZero.TabIndex = 28;
-            this.radioButton_wirelessLoraToZero.TabStop = true;
-            this.radioButton_wirelessLoraToZero.Text = "耦合lora->0";
-            this.radioButton_wirelessLoraToZero.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_ReadAll
-            // 
-            this.radioButton_ReadAll.AutoSize = true;
-            this.radioButton_ReadAll.Location = new System.Drawing.Point(445, 57);
-            this.radioButton_ReadAll.Name = "radioButton_ReadAll";
-            this.radioButton_ReadAll.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_ReadAll.TabIndex = 29;
-            this.radioButton_ReadAll.TabStop = true;
-            this.radioButton_ReadAll.Text = "读取所有";
-            this.radioButton_ReadAll.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_CleanAll
-            // 
-            this.radioButton_CleanAll.AutoSize = true;
-            this.radioButton_CleanAll.Location = new System.Drawing.Point(541, 57);
-            this.radioButton_CleanAll.Name = "radioButton_CleanAll";
-            this.radioButton_CleanAll.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_CleanAll.TabIndex = 30;
-            this.radioButton_CleanAll.TabStop = true;
-            this.radioButton_CleanAll.Text = "清除所有";
-            this.radioButton_CleanAll.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_ConnectDevice
-            // 
-            this.radioButton_ConnectDevice.AutoSize = true;
-            this.radioButton_ConnectDevice.Location = new System.Drawing.Point(638, 56);
-            this.radioButton_ConnectDevice.Name = "radioButton_ConnectDevice";
-            this.radioButton_ConnectDevice.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_ConnectDevice.TabIndex = 31;
-            this.radioButton_ConnectDevice.TabStop = true;
-            this.radioButton_ConnectDevice.Text = "连接设备";
-            this.radioButton_ConnectDevice.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_addMsgHead
-            // 
-            this.checkBox_addMsgHead.AutoSize = true;
-            this.checkBox_addMsgHead.Location = new System.Drawing.Point(85, 197);
-            this.checkBox_addMsgHead.Name = "checkBox_addMsgHead";
-            this.checkBox_addMsgHead.Size = new System.Drawing.Size(84, 16);
-            this.checkBox_addMsgHead.TabIndex = 10;
-            this.checkBox_addMsgHead.Text = "添加消息头";
-            this.checkBox_addMsgHead.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_RemoveMsgHead
-            // 
-            this.checkBox_RemoveMsgHead.AutoSize = true;
-            this.checkBox_RemoveMsgHead.Location = new System.Drawing.Point(7, 249);
-            this.checkBox_RemoveMsgHead.Name = "checkBox_RemoveMsgHead";
-            this.checkBox_RemoveMsgHead.Size = new System.Drawing.Size(84, 16);
-            this.checkBox_RemoveMsgHead.TabIndex = 5;
-            this.checkBox_RemoveMsgHead.Text = "移除消息头";
-            this.checkBox_RemoveMsgHead.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Common
-            // 
-            this.radioButton_Common.AutoSize = true;
-            this.radioButton_Common.Location = new System.Drawing.Point(725, 55);
-            this.radioButton_Common.Name = "radioButton_Common";
-            this.radioButton_Common.Size = new System.Drawing.Size(47, 16);
-            this.radioButton_Common.TabIndex = 32;
-            this.radioButton_Common.TabStop = true;
-            this.radioButton_Common.Text = "通用";
-            this.radioButton_Common.UseVisualStyleBackColor = true;
+            this.radioButton_StopLoraRX.AutoSize = true;
+            this.radioButton_StopLoraRX.Location = new System.Drawing.Point(105, 14);
+            this.radioButton_StopLoraRX.Name = "radioButton_StopLoraRX";
+            this.radioButton_StopLoraRX.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_StopLoraRX.TabIndex = 4;
+            this.radioButton_StopLoraRX.TabStop = true;
+            this.radioButton_StopLoraRX.Text = "StopLoraRX";
+            this.radioButton_StopLoraRX.UseVisualStyleBackColor = true;
             // 
             // SerialCom
             // 
@@ -823,6 +824,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SerialCom";
             this.Text = "串口通讯";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerialCom_FormClosing);
