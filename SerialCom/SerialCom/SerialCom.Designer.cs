@@ -95,6 +95,14 @@
             this.radioButton_StopLoraTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StartLoraTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StopLoraRX = new System.Windows.Forms.RadioButton();
+            this.radioButton_BleToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_BleToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_WirelessBleToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_WirelessBleToOne = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopBleTX = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartBleTX = new System.Windows.Forms.RadioButton();
+            this.radioButton_StopBleRX = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartBleRX = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -405,9 +413,9 @@
             this.toolStripStatusDataBit,
             this.toolStripStatusStopBit,
             this.toolStripStatusParity});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 391);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 421);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(871, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(866, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -455,6 +463,14 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.radioButton_StopBleTX);
+            this.groupBox6.Controls.Add(this.radioButton_StartBleTX);
+            this.groupBox6.Controls.Add(this.radioButton_StopBleRX);
+            this.groupBox6.Controls.Add(this.radioButton_StartBleRX);
+            this.groupBox6.Controls.Add(this.radioButton_WirelessBleToZero);
+            this.groupBox6.Controls.Add(this.radioButton_WirelessBleToOne);
+            this.groupBox6.Controls.Add(this.radioButton_BleToZero);
+            this.groupBox6.Controls.Add(this.radioButton_BleToOne);
             this.groupBox6.Controls.Add(this.radioButton_Common);
             this.groupBox6.Controls.Add(this.radioButton_ConnectDevice);
             this.groupBox6.Controls.Add(this.radioButton_CleanAll);
@@ -487,7 +503,7 @@
             this.groupBox6.Controls.Add(this.radioButton_StartLoraRX);
             this.groupBox6.Location = new System.Drawing.Point(12, 296);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(849, 82);
+            this.groupBox6.Size = new System.Drawing.Size(849, 110);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             // 
@@ -815,11 +831,104 @@
             this.radioButton_StopLoraRX.Text = "StopLoraRX";
             this.radioButton_StopLoraRX.UseVisualStyleBackColor = true;
             // 
+            // radioButton_BleToZero
+            // 
+            this.radioButton_BleToZero.AutoSize = true;
+            this.radioButton_BleToZero.Location = new System.Drawing.Point(85, 79);
+            this.radioButton_BleToZero.Name = "radioButton_BleToZero";
+            this.radioButton_BleToZero.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_BleToZero.TabIndex = 34;
+            this.radioButton_BleToZero.TabStop = true;
+            this.radioButton_BleToZero.Text = "ble->0";
+            this.radioButton_BleToZero.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_BleToOne
+            // 
+            this.radioButton_BleToOne.AutoSize = true;
+            this.radioButton_BleToOne.Location = new System.Drawing.Point(11, 79);
+            this.radioButton_BleToOne.Name = "radioButton_BleToOne";
+            this.radioButton_BleToOne.Size = new System.Drawing.Size(59, 16);
+            this.radioButton_BleToOne.TabIndex = 33;
+            this.radioButton_BleToOne.TabStop = true;
+            this.radioButton_BleToOne.Text = "ble->1";
+            this.radioButton_BleToOne.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_WirelessBleToZero
+            // 
+            this.radioButton_WirelessBleToZero.AutoSize = true;
+            this.radioButton_WirelessBleToZero.Location = new System.Drawing.Point(245, 79);
+            this.radioButton_WirelessBleToZero.Name = "radioButton_WirelessBleToZero";
+            this.radioButton_WirelessBleToZero.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_WirelessBleToZero.TabIndex = 36;
+            this.radioButton_WirelessBleToZero.TabStop = true;
+            this.radioButton_WirelessBleToZero.Text = "耦合ble->0";
+            this.radioButton_WirelessBleToZero.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_WirelessBleToOne
+            // 
+            this.radioButton_WirelessBleToOne.AutoSize = true;
+            this.radioButton_WirelessBleToOne.Location = new System.Drawing.Point(156, 79);
+            this.radioButton_WirelessBleToOne.Name = "radioButton_WirelessBleToOne";
+            this.radioButton_WirelessBleToOne.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_WirelessBleToOne.TabIndex = 35;
+            this.radioButton_WirelessBleToOne.TabStop = true;
+            this.radioButton_WirelessBleToOne.Text = "耦合ble->1";
+            this.radioButton_WirelessBleToOne.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_StopBleTX
+            // 
+            this.radioButton_StopBleTX.AutoSize = true;
+            this.radioButton_StopBleTX.Location = new System.Drawing.Point(615, 79);
+            this.radioButton_StopBleTX.Name = "radioButton_StopBleTX";
+            this.radioButton_StopBleTX.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_StopBleTX.TabIndex = 40;
+            this.radioButton_StopBleTX.TabStop = true;
+            this.radioButton_StopBleTX.Text = "StopBleTX";
+            this.radioButton_StopBleTX.UseVisualStyleBackColor = true;
+            this.radioButton_StopBleTX.CheckedChanged += new System.EventHandler(this.radioButton_StopBleTX_CheckedChanged);
+            // 
+            // radioButton_StartBleTX
+            // 
+            this.radioButton_StartBleTX.AutoSize = true;
+            this.radioButton_StartBleTX.Location = new System.Drawing.Point(520, 79);
+            this.radioButton_StartBleTX.Name = "radioButton_StartBleTX";
+            this.radioButton_StartBleTX.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_StartBleTX.TabIndex = 39;
+            this.radioButton_StartBleTX.TabStop = true;
+            this.radioButton_StartBleTX.Text = "StartBleTX";
+            this.radioButton_StartBleTX.UseVisualStyleBackColor = true;
+            this.radioButton_StartBleTX.CheckedChanged += new System.EventHandler(this.radioButton_StartBleTX_CheckedChanged);
+            // 
+            // radioButton_StopBleRX
+            // 
+            this.radioButton_StopBleRX.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.radioButton_StopBleRX.AutoSize = true;
+            this.radioButton_StopBleRX.Location = new System.Drawing.Point(433, 79);
+            this.radioButton_StopBleRX.Name = "radioButton_StopBleRX";
+            this.radioButton_StopBleRX.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_StopBleRX.TabIndex = 38;
+            this.radioButton_StopBleRX.TabStop = true;
+            this.radioButton_StopBleRX.Text = "StopBleRX";
+            this.radioButton_StopBleRX.UseVisualStyleBackColor = true;
+            this.radioButton_StopBleRX.CheckedChanged += new System.EventHandler(this.radioButton_StopBleRX_CheckedChanged);
+            // 
+            // radioButton_StartBleRX
+            // 
+            this.radioButton_StartBleRX.AutoSize = true;
+            this.radioButton_StartBleRX.Location = new System.Drawing.Point(339, 79);
+            this.radioButton_StartBleRX.Name = "radioButton_StartBleRX";
+            this.radioButton_StartBleRX.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_StartBleRX.TabIndex = 37;
+            this.radioButton_StartBleRX.TabStop = true;
+            this.radioButton_StartBleRX.Text = "StartBleRX";
+            this.radioButton_StartBleRX.UseVisualStyleBackColor = true;
+            this.radioButton_StartBleRX.CheckedChanged += new System.EventHandler(this.radioButton_StartBleRX_CheckedChanged);
+            // 
             // SerialCom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 413);
+            this.ClientSize = new System.Drawing.Size(866, 443);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
@@ -917,6 +1026,14 @@
         private System.Windows.Forms.CheckBox checkBox_addMsgHead;
         private System.Windows.Forms.CheckBox checkBox_RemoveMsgHead;
         private System.Windows.Forms.RadioButton radioButton_Common;
+        private System.Windows.Forms.RadioButton radioButton_BleToZero;
+        private System.Windows.Forms.RadioButton radioButton_BleToOne;
+        private System.Windows.Forms.RadioButton radioButton_WirelessBleToZero;
+        private System.Windows.Forms.RadioButton radioButton_WirelessBleToOne;
+        private System.Windows.Forms.RadioButton radioButton_StopBleTX;
+        private System.Windows.Forms.RadioButton radioButton_StartBleTX;
+        private System.Windows.Forms.RadioButton radioButton_StopBleRX;
+        private System.Windows.Forms.RadioButton radioButton_StartBleRX;
     }
 }
 

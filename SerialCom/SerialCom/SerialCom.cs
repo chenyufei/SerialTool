@@ -343,6 +343,7 @@ namespace SerialCom
             {
                 return;
             }
+            Writelog(strSendData, Color.Black);
             if (checkBox_addMsgHead.Checked)
             {
                 string str = strSendData;
@@ -478,7 +479,22 @@ namespace SerialCom
             {
                 return ConcatWriteValue("lora", 0);
             }
-
+            if (radioButton_BleToOne.Checked)
+            {
+                return ConcatWriteValue("ble", 1);
+            }
+            if (radioButton_BleToZero.Checked)
+            {
+                return ConcatWriteValue("ble", 0);
+            }
+            if(radioButton_WirelessBleToOne.Checked)
+            {
+                return ConcatWriteValue("wireless_ble", 1);
+            }
+            if(radioButton_WirelessBleToZero.Checked)
+            {
+                return ConcatWriteValue("wireless_ble", 0);
+            }
             if (radioButton_AdcToOne.Checked)
             {
                 return ConcatWriteValue("adc", 1);
@@ -513,6 +529,64 @@ namespace SerialCom
             {
                 return this.textSend.Text.Trim();
             }
+
+            if(this.radioButton_StopBleRX.Checked)
+            {
+                return string.Format("{{\"cmd\":\"ble\",\"test\":\"rx_stop\"}}");
+            }
+            if(this.radioButton_StopBleTX.Checked)
+            {
+                return string.Format("{{\"cmd\":\"ble\",\"test\":\"tx_stop\"}}");
+            }
+
+            if (this.radioButton_StartBleTX.Checked)
+            {
+                string str = this.textSend.Text;
+                try
+                {
+                    string psStr = str.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ElementAt(0);
+                    string tfStr = str.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    string feStr = str.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ElementAt(2);
+
+                    string ps = psStr.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    string tf = tfStr.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    string fe = feStr.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    if(ps.Equals("10101010"))
+                    {
+                        return string.Format("{{\"cmd\":\"ble\",\"test\":\"tx_start\",\"para\":{{\"ps\" :\"{0}\",\"tf\":\"{1}\",\"fe\":\"{2}\"}}}}", ps, tf, fe);
+                    }
+                    else
+                    {
+                        return string.Format("{{\"cmd\":\"ble\",\"test\":\"tx_start\",\"para\":{{\"ps\" :\"{0}\",\"tf\":\"{1}\",\"tp\":\"{2}\"}}}}", ps, tf, fe);
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    Writelog(ex.Message, Color.Red);
+                    return string.Empty;
+                }
+            }
+
+            if (this.radioButton_StartBleRX.Checked)
+            {
+                string str = this.textSend.Text;
+                try
+                {
+                    string psStr = str.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ElementAt(0);
+                    string tfStr = str.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+
+                    string ps = psStr.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    string tf = tfStr.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ElementAt(1);
+                    return string.Format("{{\"cmd\":\"ble\",\"test\":\"rx_start\",\"para\":{{\"ps\" :\"{0}\",\"tf\":\"{1}\"}}}}", ps, tf);
+                }
+                catch (Exception ex)
+                {
+                    Writelog(ex.Message, Color.Red);
+                    return string.Empty;
+                }
+            }
+
             return string.Empty;
         }
 
@@ -751,6 +825,40 @@ namespace SerialCom
             {
                 this.textSend.Clear();
             }
+        }
+
+        private void radioButton_StartBleRX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_StartBleRX.Checked)
+            {
+                this.textSend.Text = "ps:PRBS9,tf:2402";
+            }
+            else
+            {
+                this.textSend.Clear();
+            }
+        }
+
+        private void radioButton_StopBleRX_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textSend.Clear();
+        }
+
+        private void radioButton_StartBleTX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_StartBleTX.Checked)
+            {
+                this.textSend.Text = "ps:PRBS9,tf:2402,tp:0";
+            }
+            else
+            {
+                this.textSend.Clear();
+            }
+        }
+
+        private void radioButton_StopBleTX_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textSend.Clear();
         }
 
         /*
