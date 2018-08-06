@@ -539,6 +539,14 @@ namespace SerialCom
                 return string.Format("{{\"cmd\":\"ble\",\"test\":\"tx_stop\"}}");
             }
 
+            if(this.radioButton_StartLaser.Checked)
+            {
+                return string.Format("{{\"cmd\":\"laser\",\"test\":\"start\"}}");
+            }
+            if(this.radioButton_StopLaser.Checked)
+            {
+                return string.Format("{{\"cmd\":\"laser\",\"test\":\"stop\"}}");
+            }
             if (this.radioButton_StartBleTX.Checked)
             {
                 string str = this.textSend.Text;
