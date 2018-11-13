@@ -513,6 +513,15 @@ namespace SerialCom
                 return ConcatWriteValue("step", 0);
             }
 
+            if (radioButton_DoorToOne.Checked)
+            {
+                return ConcatWriteValue("door_status", 1);
+            }
+            if (radioButton_DoorToZero.Checked)
+            {
+                return ConcatWriteValue("door_status", 0);
+            }
+
             if (radioButton_ReadAll.Checked)
             {
                 return ConcatReadValue("all");
@@ -538,7 +547,10 @@ namespace SerialCom
             {
                 return string.Format("{{\"cmd\":\"ble\",\"test\":\"tx_stop\"}}");
             }
-
+            if(this.radioButton_Door.Checked)
+            {
+                return string.Format("{{\"cmd\":\"door\"}}");
+            }
             if(this.radioButton_StartLaser.Checked)
             {
                 return string.Format("{{\"cmd\":\"laser\",\"test\":\"start\"}}");

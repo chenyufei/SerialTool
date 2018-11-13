@@ -65,6 +65,8 @@
             this.toolStripStatusParity = new System.Windows.Forms.ToolStripStatusLabel();
             this.radioButton_StartLoraRX = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton_StopLaser = new System.Windows.Forms.RadioButton();
+            this.radioButton_StartLaser = new System.Windows.Forms.RadioButton();
             this.radioButton_StopBleTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StartBleTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StopBleRX = new System.Windows.Forms.RadioButton();
@@ -102,8 +104,9 @@
             this.radioButton_StopLoraTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StartLoraTX = new System.Windows.Forms.RadioButton();
             this.radioButton_StopLoraRX = new System.Windows.Forms.RadioButton();
-            this.radioButton_StartLaser = new System.Windows.Forms.RadioButton();
-            this.radioButton_StopLaser = new System.Windows.Forms.RadioButton();
+            this.radioButton_Door = new System.Windows.Forms.RadioButton();
+            this.radioButton_DoorToZero = new System.Windows.Forms.RadioButton();
+            this.radioButton_DoorToOne = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -464,6 +467,9 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.radioButton_DoorToZero);
+            this.groupBox6.Controls.Add(this.radioButton_DoorToOne);
+            this.groupBox6.Controls.Add(this.radioButton_Door);
             this.groupBox6.Controls.Add(this.radioButton_StopLaser);
             this.groupBox6.Controls.Add(this.radioButton_StartLaser);
             this.groupBox6.Controls.Add(this.radioButton_StopBleTX);
@@ -509,6 +515,28 @@
             this.groupBox6.Size = new System.Drawing.Size(849, 163);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
+            // 
+            // radioButton_StopLaser
+            // 
+            this.radioButton_StopLaser.AutoSize = true;
+            this.radioButton_StopLaser.Location = new System.Drawing.Point(105, 104);
+            this.radioButton_StopLaser.Name = "radioButton_StopLaser";
+            this.radioButton_StopLaser.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_StopLaser.TabIndex = 42;
+            this.radioButton_StopLaser.TabStop = true;
+            this.radioButton_StopLaser.Text = "StopLaser";
+            this.radioButton_StopLaser.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_StartLaser
+            // 
+            this.radioButton_StartLaser.AutoSize = true;
+            this.radioButton_StartLaser.Location = new System.Drawing.Point(11, 104);
+            this.radioButton_StartLaser.Name = "radioButton_StartLaser";
+            this.radioButton_StartLaser.Size = new System.Drawing.Size(83, 16);
+            this.radioButton_StartLaser.TabIndex = 41;
+            this.radioButton_StartLaser.TabStop = true;
+            this.radioButton_StartLaser.Text = "StartLaser";
+            this.radioButton_StartLaser.UseVisualStyleBackColor = true;
             // 
             // radioButton_StopBleTX
             // 
@@ -927,27 +955,38 @@
             this.radioButton_StopLoraRX.Text = "StopLoraRX";
             this.radioButton_StopLoraRX.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StartLaser
+            // radioButton_Door
             // 
-            this.radioButton_StartLaser.AutoSize = true;
-            this.radioButton_StartLaser.Location = new System.Drawing.Point(11, 104);
-            this.radioButton_StartLaser.Name = "radioButton_StartLaser";
-            this.radioButton_StartLaser.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_StartLaser.TabIndex = 41;
-            this.radioButton_StartLaser.TabStop = true;
-            this.radioButton_StartLaser.Text = "StartLaser";
-            this.radioButton_StartLaser.UseVisualStyleBackColor = true;
+            this.radioButton_Door.AutoSize = true;
+            this.radioButton_Door.Location = new System.Drawing.Point(192, 104);
+            this.radioButton_Door.Name = "radioButton_Door";
+            this.radioButton_Door.Size = new System.Drawing.Size(47, 16);
+            this.radioButton_Door.TabIndex = 43;
+            this.radioButton_Door.TabStop = true;
+            this.radioButton_Door.Text = "门磁";
+            this.radioButton_Door.UseVisualStyleBackColor = true;
             // 
-            // radioButton_StopLaser
+            // radioButton_DoorToZero
             // 
-            this.radioButton_StopLaser.AutoSize = true;
-            this.radioButton_StopLaser.Location = new System.Drawing.Point(105, 104);
-            this.radioButton_StopLaser.Name = "radioButton_StopLaser";
-            this.radioButton_StopLaser.Size = new System.Drawing.Size(77, 16);
-            this.radioButton_StopLaser.TabIndex = 42;
-            this.radioButton_StopLaser.TabStop = true;
-            this.radioButton_StopLaser.Text = "StopLaser";
-            this.radioButton_StopLaser.UseVisualStyleBackColor = true;
+            this.radioButton_DoorToZero.AutoSize = true;
+            this.radioButton_DoorToZero.Location = new System.Drawing.Point(339, 104);
+            this.radioButton_DoorToZero.Name = "radioButton_DoorToZero";
+            this.radioButton_DoorToZero.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_DoorToZero.TabIndex = 45;
+            this.radioButton_DoorToZero.TabStop = true;
+            this.radioButton_DoorToZero.Text = "Door->0";
+            this.radioButton_DoorToZero.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_DoorToOne
+            // 
+            this.radioButton_DoorToOne.AutoSize = true;
+            this.radioButton_DoorToOne.Location = new System.Drawing.Point(255, 104);
+            this.radioButton_DoorToOne.Name = "radioButton_DoorToOne";
+            this.radioButton_DoorToOne.Size = new System.Drawing.Size(65, 16);
+            this.radioButton_DoorToOne.TabIndex = 44;
+            this.radioButton_DoorToOne.TabStop = true;
+            this.radioButton_DoorToOne.Text = "Door->1";
+            this.radioButton_DoorToOne.UseVisualStyleBackColor = true;
             // 
             // SerialCom
             // 
@@ -1060,6 +1099,9 @@
         private System.Windows.Forms.RadioButton radioButton_StartBleRX;
         private System.Windows.Forms.RadioButton radioButton_StopLaser;
         private System.Windows.Forms.RadioButton radioButton_StartLaser;
+        private System.Windows.Forms.RadioButton radioButton_Door;
+        private System.Windows.Forms.RadioButton radioButton_DoorToZero;
+        private System.Windows.Forms.RadioButton radioButton_DoorToOne;
     }
 }
 
